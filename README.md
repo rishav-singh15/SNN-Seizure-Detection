@@ -21,10 +21,49 @@ This repository currently covers the following completed steps of the rebuild:
 
 Steps beyond C2 are in progress and are described in the Roadmap section below.
 
+## Visualizations
+
+<p align="center">
+  <img src="images/cell17_out0.png" width="800"><br>
+  <em>Raw EEG across the four target channels (F7-T7, T7-P7, F8-T8, T8-P8) for chb01_16, with the clinician-annotated seizure interval shaded in red.</em>
+</p>
+
+<p align="center">
+  <img src="images/cell30_out0.png" width="800"><br>
+  <em>16-level one-hot spike encoding of a 10-second window around seizure onset, 4 channels x 16 levels = 64 rows, showing how the raw signal is converted into spike trains for the SNN.</em>
+</p>
+
+<p align="center">
+  <img src="images/cell63_out4.png" width="700"><br>
+  <em>Power spectral density before and after a 60 Hz notch filter (with harmonics removed), confirming line-noise removal during preprocessing.</em>
+</p>
+
+<p align="center">
+  <img src="images/cell66_out2.png" width="600"><br>
+  <em>Per-epoch heatmap and averaged evoked response for channel F7-T7, comparing seizure vs. normal epochs.</em>
+</p>
+
+<p align="center">
+  <img src="images/ica20before.png" width="700"><br>
+  <em>ICA decomposition into 20 components before artifact removal.</em>
+</p>
+
+<p align="center">
+  <img src="images/ica20after.png" width="700"><br>
+  <em>ICA decomposition into 20 components after artifact removal, isolated independently by working through the MNE-Python ICA documentation.</em>
+</p>
+
 ## Repository Structure
 
 ```
 .
+├── images/
+│   ├── cell17_out0.png
+│   ├── cell30_out0.png
+│   ├── cell63_out4.png
+│   ├── cell66_out2.png
+│   ├── ica20before.png
+│   └── ica20after.png
 ├── notebooks/
 │   ├── step_A_data_visualization.ipynb
 │   ├── step_B_encoding_windowing.ipynb
