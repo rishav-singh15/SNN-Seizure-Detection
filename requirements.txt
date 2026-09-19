@@ -1,0 +1,8 @@
+numpy>=1.24
+matplotlib>=3.7
+mne>=1.5
+torch>=2.0
+torchvision>=0.15
+torchaudio>=2.0
+snntorch>=0.7
+scikit-learn>=1.3

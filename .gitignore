@@ -1,0 +1,44 @@
+# Data
+data/
+*.edf
+*.zip
+*.npy
+*.npz
+*.csv
+
+# Colab / Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# Model artifacts / checkpoints
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+runs/
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Misc
+*.log
+.cache/
