@@ -75,18 +75,18 @@ A win is only a result once you know where it comes from, so the pipeline was sp
 
 ```mermaid
 flowchart TD
-    A[Raw EEG: 4 channels, 256 Hz] --> B[16-level one-hot spike encoding: 64 input neurons]
-    B --> C[8-second windows, labelled from clinician annotations]
-    C --> D[Train 6 SNNs: 3 sizes x dense / 90% sparse]
-    D --> E{Pre-declared accuracy gate: val AUC and test AUC >= 0.95}
-    E -- 5 pass --> F[Run real EEG through each model, measure every neuron's firing rate]
-    E -- 1 fails: excluded --> X[Reported, not rescued]
-    F --> G[Build hypergraph: one hyperedge per neuron, weight = measured firing rate]
-    G --> H1[Naive: sequential partition + linear placement]
-    G --> H2[Hypergraph-aware: overlap partition + Hilbert placement + refinement]
-    H1 --> I[Same scoring function: connectivity, energy, latency, ELP, synaptic reuse]
+    A["Raw EEG:<br>4 channels, 256 Hz"] --> B["16-level one-hot spike encoding:<br>64 input neurons"]
+    B --> C["8-second windows,<br>labelled from clinician annotations"]
+    C --> D["Train 6 SNNs:<br>3 sizes x dense / 90% sparse"]
+    D --> E{"Pre-declared accuracy gate:<br>val AUC and test AUC >= 0.95"}
+    E -- 5 pass --> F["Run real EEG through each model,<br>measure every neuron's firing rate"]
+    E -- "1 fails:<br>excluded" --> X["Reported,<br>not rescued"]
+    F --> G["Build hypergraph:<br>one hyperedge per neuron,<br>weight = measured firing rate"]
+    G --> H1["Naive:<br>sequential partition + linear placement"]
+    G --> H2["Hypergraph-aware:<br>overlap partition +<br>Hilbert placement + refinement"]
+    H1 --> I["Same scoring function:<br>connectivity, energy, latency,<br>ELP, synaptic reuse"]
     H2 --> I
-    I --> J[Ablation: separate partitioning from placement]
+    I --> J["Ablation:<br>separate partitioning from placement"]
 ```
 
 ### Stage 1: EEG to spikes
