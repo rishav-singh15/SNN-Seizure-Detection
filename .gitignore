@@ -42,3 +42,4 @@ Thumbs.db
 # Misc
 *.log
 .cache/
+.Rhistory
